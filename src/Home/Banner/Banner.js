@@ -6,7 +6,7 @@ import bannerThird from '../../img/services/banner-third.jfif';
 
 const Banner = () => {
     return (
-        <div>
+        <div className='mt-5'>
             <Carousel>
                 <Carousel.Item>
                     <img
