@@ -9,6 +9,11 @@ function App() {
     <div>
       <Header/>
       <Banner/>
+
+      <Routes>
+
+      </Routes>
+      
       <Services/>
 
       <Footer/>      
