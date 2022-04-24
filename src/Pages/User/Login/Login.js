@@ -18,7 +18,7 @@ const Login = () => {
         errorMessage = error.message;
     }
     if (user) {
-        navigate('/');
+        navigate('/home');
     }
     if (loading) {
         loadingMessge = <div className="spinner-border text-danger" role="status">
