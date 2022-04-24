@@ -8,7 +8,7 @@ import { signOut } from 'firebase/auth';
 
 const Header = () => {
     const [user] = useAuthState(auth);
-    const logOut = () =>{
+    const logOut = () => {
         signOut(auth);
     }
 
@@ -25,13 +25,11 @@ const Header = () => {
                             <Nav.Link as={CustomLink} to="/about">About</Nav.Link>
                             <Nav.Link as={CustomLink} to="/blog">Blog</Nav.Link>
                             {
-                                user ? 
-                                    <div>
-                                        <Nav.Link onClick={logOut} as={Link} to="/">Signout</Nav.Link>
-                                        {
-                                            user && <p>{user.email.slice(0,5)}</p>
-                                        }
-                                    </div>
+                                user ?
+                                    <Nav.Link onClick={logOut} as={Link} to="/">Signout{
+                                        user && <p>{user.email.slice(0, 5)}</p>
+                                    }
+                                    </Nav.Link>
                                     :
                                     <div className=' d-lg-flex '>
                                         <Nav.Link as={CustomLink} to="/signup">Signup</Nav.Link>
