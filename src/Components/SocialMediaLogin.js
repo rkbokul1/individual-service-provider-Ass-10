@@ -2,23 +2,36 @@ import React from 'react';
 import google from '../img/google.png';
 import facebook from '../img/facebook.png';
 import github from '../img/github.png'
-import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { useNavigate } from 'react-router-dom';
 
 const SocialMediaLogin = () => {
     const [signInWithGoogle, user, gooLoading, gooError] = useSignInWithGoogle(auth);
     const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
+    const [signInWithFacebook, faUser, faLoading, faError] = useSignInWithFacebook(auth);
     const navigate = useNavigate();
 
     const handleGoogleSignIn = () =>{
         signInWithGoogle();
-        navigate('/');
+        if(user){
+            navigate('/');
+        }
     }
     const handleGithubSignIn = () =>{
         signInWithGithub();
-        
-        navigate('/');
+
+        if(gitUser){
+            navigate('/');
+        }
+    }
+
+    const handleFacebookSignIn = ( ) =>{
+        signInWithFacebook();
+
+        if(faUser){
+            navigate('/');
+        }
     }
 
 
@@ -45,7 +58,7 @@ const SocialMediaLogin = () => {
                     </button>
                 </div>
                 <div className='col-lg-4 col-md-4 col-sm-12'>
-                    <button className='btn btn-danger'>
+                    <button onClick={handleFacebookSignIn} className='btn btn-danger'>
                         <img className='pe-2' src={facebook} alt="" />
                         Sign in by Facebook
                     </button>
