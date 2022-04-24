@@ -6,7 +6,7 @@ import CustomLink from '../../Home/CustomLink/CustomLink';
 const Header = () => {
     return (
         <div>
-            <Navbar fixed="top" bg="light" expand="lg">
+            <Navbar className='sticky-top' sticky="top" bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand as={Link} to="/">Stack<span className='text-danger'>-Master</span></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

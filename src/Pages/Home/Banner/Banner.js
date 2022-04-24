@@ -1,12 +1,12 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import bannerFirst from '../../img/services/banner-first.jfif';
-import bannerSecond from '../../img/services/banner-second.jfif';
-import bannerThird from '../../img/services/banner-third.jfif';
+import bannerFirst from '../../../img/services/banner-first.jfif';
+import bannerSecond from '../../../img/services/banner-second.jfif';
+import bannerThird from '../../../img/services/banner-third.jfif';
 
 const Banner = () => {
     return (
-        <div className='mt-5'>
+        <div>
             <Carousel>
                 <Carousel.Item>
                     <img
