@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import {  useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Form } from 'react-bootstrap';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import SocialMediaLogin from '../../../Components/SocialMediaLogin';
 import auth from '../../../firebase.init';
@@ -10,16 +10,23 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const [checked, setChecked] = useState(false);
 
     let errorMessage;
-    if(error){
+    let loadingMessge;
+    if (error) {
         errorMessage = error.message;
     }
-    if(user){
+    if (user) {
         navigate('/');
     }
+    if (loading) {
+        loadingMessge = <div className="spinner-border text-danger" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </div>
+    }
 
-    const handleSignIn = (e) =>{
+    const handleSignIn = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(email, password);
     }
@@ -33,7 +40,7 @@ const Login = () => {
                 <Form onSubmit={handleSignIn}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control onBlur={(e) =>setEmail(e.target.value) } type="email" placeholder="Enter email" required/>
+                        <Form.Control onBlur={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -42,18 +49,20 @@ const Login = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
+                        <Form.Check onClick={(e) => setChecked(e.target.checked)} type="checkbox" label="Accept Terms & Conditions" />
                     </Form.Group>
 
                     <p className='text-danger mt-2'>{errorMessage}</p>
-
-                    <Button variant="danger" type="submit">
-                        Log in
-                    </Button>
+                    <div className='text-center mb-2'>{loadingMessge}</div>
+                    {
+                        checked ? <button className='btn btn-danger' type='submit'>Login</button>
+                        :
+                        <button disabled className='btn btn-danger' type='submit'>Login</button>
+                    }
                 </Form>
 
                 <p>New to Stack-Master? <Link className='text-decoration-none text-danger' to='/signup'>Create an Account</Link></p>
-                <SocialMediaLogin/>
+                <SocialMediaLogin />
             </div>
         </div>
     );

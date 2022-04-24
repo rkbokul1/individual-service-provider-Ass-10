@@ -11,6 +11,7 @@ const Register = () => {
     const [email, SetEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const [checked, setChecked] = useState(false);
 
     let errorMessage;
     let loadingMessge;
@@ -58,15 +59,18 @@ const Register = () => {
                         <Form.Control onBlur={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
+                        <Form.Check onClick={(e) => setChecked(e.target.checked)} type="checkbox" label="Accept Terms & Conditions" />
                     </Form.Group>
 
                     <div className='text-center mb-2'>{loadingMessge}</div>
                     <p className='text-danger'>{errorMessage}</p>
 
-                    <Button className='w-50 mx-auto d-block mb-2' variant="danger" type="submit">
-                        Sign Up
-                    </Button>
+                    {
+                        checked ? <button className='btn btn-danger' type='submit'>Sign Up</button>
+                        :
+                        <button disabled className='btn btn-danger' type='submit'>Sign UP</button>
+                    }
+                    
                 </Form>
                 <p>Already have an account? <Link className='text-decoration-none text-danger' to='/login'>Login here</Link></p>
                 <SocialMediaLogin />
