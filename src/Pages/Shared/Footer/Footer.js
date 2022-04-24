@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='text-center'>
+        <div className='text-center mt-5'>
             <p><small>Copyrights Reserve &copy;Stack<span className='text-danger'>-master</span> {new Date().getFullYear()}</small></p>
         </div>
     );

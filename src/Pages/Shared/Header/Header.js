@@ -26,8 +26,8 @@ const Header = () => {
                             <Nav.Link as={CustomLink} to="/blog">Blog</Nav.Link>
                             {
                                 user ?
-                                    <Nav.Link onClick={logOut} as={Link} to="/">Signout{
-                                        user && <p>{user.email.slice(0, 5)}</p>
+                                    <Nav.Link className='text-center d-flex text-primary' onClick={logOut} as={Link} to="/">Signout {
+                                        user?.email && <p className='ps-1'>{user.email.slice(0, 5)}</p>
                                     }
                                     </Nav.Link>
                                     :
