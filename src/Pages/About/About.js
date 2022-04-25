@@ -17,6 +17,9 @@ const About = () => {
                             <br />
                             <p>There are many goals that a web developer may have, but some of the most common ones include creating visually appealing and user-friendly websites, developing sites that are optimized for search engine ranking, and ensuring that websites are properly coded and functional. In addition, web developers may also be responsible for maintaining and updating existing websites, as well as troubleshooting any technical issues that may arise.</p>
                         </p>
+                        <h2 className='text-danger'><strong>Purpose</strong></h2>
+                        <p>Web-Master is a individual service provider to teach the student about full-stack (mern-technoloy). In this services
+                            i teach to student about- HTML-5, CSS-3, JS(ES-6), React.js node.js.</p>
                     </div>
 
                 </div>
