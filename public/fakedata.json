@@ -11,13 +11,34 @@
         "name" : "CSS-3",
         "title" : "Mark-up Language",
         "description" : "CSS is Language for website Cascading Style. The leatest version of this language is css-3",
-        "img" : "https://i.ibb.co/tQ5SQrp/html.png"
+        "img" : "https://i.ibb.co/CPbRBdC/css-3.jpg"
     },
     {
         "id" : 3,
+        "name" : "Bootstrap/Tailwind",
+        "title" : "Html and css Framework",
+        "description" : "Bootstrap and Tailwind is html and css Framework that can create static website using vanila css and a lot of code of css and can create responsive web easily ",
+        "img" : "https://i.ibb.co/QfsnFwD/bootstrap-tailwind.jpg"
+    },
+    {
+        "id" : 4,
         "name" : "Javascript",
         "title" : "Dynamic and Server-Side Language",
-        "description" : "Html is Markup Language for website. The leatest version of this language is html-5",
-        "img" : "https://i.ibb.co/tQ5SQrp/html.png"
+        "description" : "Javascript is the main life-line of website design. That can create dynamic web in front-end and back-end. Its can help to web... ",
+        "img" : "https://i.ibb.co/wJrJh3X/javascript.png"
+    },
+    {
+        "id" : 5,
+        "name" : "React",
+        "title" : "Javascript Frontend-Framework",
+        "description" : "React is Popular front-end library and its use widely day by day. The main feature of react is for single-page application. There have also framework of react that is react-Bootstrap and react tailwind,",
+        "img" : "https://i.ibb.co/wz4V6sV/react.png"
+    },
+    {
+        "id" : 6,
+        "name" : "Node JS",
+        "title" : "Server-Side Language",
+        "description" : "The most popular back-end framework is node js. That are mainly covered by javascript language and it going to popular day by day",
+        "img" : "https://i.ibb.co/cF56wNG/node.png"
     }
 ]
