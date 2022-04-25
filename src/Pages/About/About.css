@@ -1,0 +1,8 @@
+.about{
+    background-color: #ECECEC;
+    /* height: 90vh; */
+}
+.about-img{
+    border: 3px solid white;
+    border-radius: 50%;
+}
