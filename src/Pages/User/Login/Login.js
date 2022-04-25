@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import SocialMediaLogin from '../../../Components/SocialMediaLogin';
 import auth from '../../../firebase.init';
 
 const Login = () => {
-    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, EmPassUser, loading, error] = useSignInWithEmailAndPassword(auth);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -17,7 +17,7 @@ const Login = () => {
     if (error) {
         errorMessage = error.message;
     }
-    if (user) {
+    if (EmPassUser) {
         navigate('/home');
     }
     if (loading) {
@@ -56,12 +56,15 @@ const Login = () => {
                     <div className='text-center mb-2'>{loadingMessge}</div>
                     {
                         checked ? <button className='btn btn-danger' type='submit'>Login</button>
-                        :
-                        <button disabled className='btn btn-danger' type='submit'>Login</button>
+                            :
+                            <button disabled className='btn btn-danger' type='submit'>Login</button>
                     }
                 </Form>
+                <div>
+                    <p className='mt-2'>New to Stack-Master? <Link className='text-decoration-none text-danger' to='/signup'>Create an Account</Link></p>
+                </div>
 
-                <p>New to Stack-Master? <Link className='text-decoration-none text-danger' to='/signup'>Create an Account</Link></p>
+
                 <SocialMediaLogin />
             </div>
         </div>

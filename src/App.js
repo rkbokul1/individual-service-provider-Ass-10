@@ -10,6 +10,7 @@ import Login from './Pages/User/Login/Login';
 import About from './Pages/About/About';
 import ServiceDetails from './Pages/Home/Service/ServiceDetails/ServiceDetails';
 import RequireAuth from './Components/RequireAuth';
+import Blog from './Blog/Blog';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path='/about' element={<About />}></Route>
+        <Route path='/blog' element={<Blog/>}></Route>
         <Route path='/signup' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
 

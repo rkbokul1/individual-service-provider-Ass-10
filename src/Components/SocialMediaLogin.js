@@ -12,26 +12,19 @@ const SocialMediaLogin = () => {
     const [signInWithFacebook, faUser, faLoading, faError] = useSignInWithFacebook(auth);
     const navigate = useNavigate();
 
-    const handleGoogleSignIn = () =>{
+    const handleGoogleSignIn = () => {
         signInWithGoogle();
-        if(user){
-            navigate('/');
-        }
     }
-    const handleGithubSignIn = () =>{
+    const handleGithubSignIn = () => {
         signInWithGithub();
-
-        if(gitUser){
-            navigate('/');
-        }
     }
 
-    const handleFacebookSignIn = ( ) =>{
+    const handleFacebookSignIn = () => {
         signInWithFacebook();
-
-        if(faUser){
-            navigate('/');
-        }
+    }
+    
+    if(user || gitUser || faUser){
+        navigate('/');
     }
 
 

@@ -1,0 +1,16 @@
+[
+    {   "id" : 1,
+        "question": "What is the Diffrence Between Authorization and Authentication?",
+        "answer" : "Simply put, authentication is the process of verifying who someone is, whereas authorization is the process of verifying what specific applications, files, and data a user has access to."
+    },
+    {
+        "id" : 2,
+        "question": "Why Using Firebase?",
+        "answer" : "The best part is that Firebase has all the features that helped my apps to grow to the next level. When I was stepping into Android app development, it was about the mid of 2015; I was lost entirely regarding the backend development of my app. And creating my server, managing it was quite a hassle for a newbie."
+    },
+    {
+        "id" : 3,
+        "question": "What is the usefullnes of firebase except Authentication?",
+        "answer" : "Top Funtionalites are- Firebase Database, Firebase Cloud Storage, Firebase Cloud Messaging, Firebase Remote Config etc."
+    }
+]
