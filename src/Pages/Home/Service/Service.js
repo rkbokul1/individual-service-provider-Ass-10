@@ -12,23 +12,24 @@ const Service = ({ service }) => {
 
     return (
         <div className='col-sm-12 col-md-6 col-lg-4'>
+            <div >
+                <CardGroup>
+                    <Card style={{ height: 500 }}>
+                        <Card.Img style={{ height: 200 }} variant="top" src={img} />
+                        <Card.Body>
+                            <Card.Title>{name}</Card.Title>
+                            <Card.Title>{title}</Card.Title>
+                            <Card.Text>
+                                {description}
+                            </Card.Text>
+                        </Card.Body>
+                        <Card.Footer>
+                            <Button onClick={() => handleServiceDetail(name)} className='btn btn-danger' variant="primary">Details</Button>
+                        </Card.Footer>
+                    </Card>
+                </CardGroup>
+            </div>
 
-            <CardGroup>
-                <Card style={{height:500}}>
-                    <Card.Img style={{height:200}} variant="top" src={img} />
-                    <Card.Body>
-                        <Card.Title>{name}</Card.Title>
-                        <Card.Title>{title}</Card.Title>
-                        <Card.Text>
-                            {description}
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                    <Button onClick={() => handleServiceDetail(name)} className='btn btn-danger' variant="primary">Details</Button>
-                    </Card.Footer>
-                </Card>
-            </CardGroup>
-            
         </div>
     );
 };

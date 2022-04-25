@@ -18,8 +18,10 @@ const Login = () => {
         errorMessage = error.message;
     }
     if (EmPassUser) {
-        navigate('/home');
+                
+        navigate('/home')
     }
+
     if (loading) {
         loadingMessge = <div className="spinner-border text-danger" role="status">
             <span className="visually-hidden">Loading...</span>
@@ -64,8 +66,8 @@ const Login = () => {
                     <p className='mt-2'>New to Stack-Master? <Link className='text-decoration-none text-danger' to='/signup'>Create an Account</Link></p>
                 </div>
 
-
                 <SocialMediaLogin />
+
             </div>
         </div>
     );
